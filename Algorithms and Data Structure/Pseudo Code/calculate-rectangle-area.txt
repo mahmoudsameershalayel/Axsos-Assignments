@@ -1,0 +1,6 @@
+START
+	INPUT Length
+	INPUT Width
+	SET Length * Width TO Area
+	PRINT "Rectangle Area = ", Area
+END
