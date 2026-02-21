@@ -1,0 +1,7 @@
+START
+	SET 10 TO Number1
+    SET 20 TO Number2
+	SET 30 TO Number3
+	SET (Number1 + Number2 + Number3) / 3 TO avg
+	PRINT "The average is ", avg
+END
