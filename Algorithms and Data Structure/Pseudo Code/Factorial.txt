@@ -1,0 +1,17 @@
+START
+	INPUT n
+	SET 1 TO result
+	IF n < 0 THEN
+		PRINT "Number must be non-negative"
+	ELSE
+		IF n = 0 OR n = 1 THEN
+			result = 1
+		ELSE
+			result = 1
+			FOR i = 1 TO n
+				result = result * i
+			END FOR
+		END IF
+		PRINT "The factorial of n is:", result
+	END IF
+END

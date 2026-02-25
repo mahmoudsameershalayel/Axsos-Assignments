@@ -1,0 +1,13 @@
+START
+	INPUT N
+	IF N <= 0 THEN
+		PRINT "Number must be positive"
+	ELSE
+		sum = 0
+		FOR i = 1 TO N
+			sum = sum + i
+		END FOR
+
+		PRINT "The sum from 1 to", N, "is:", sum
+	END IF
+END
