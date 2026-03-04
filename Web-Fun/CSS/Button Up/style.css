@@ -1,7 +1,10 @@
 .container{
     margin: 50px 0 0 50px;
 }
-.search button{
+button{
+    display: block;
+}
+.search{
     width: 150px;
     padding: 5px 0;
     border: 2px solid #13c3c1;
@@ -11,7 +14,7 @@
     font-weight: bold;
     font-size: 15px;
 }
-.plus button{
+.plus{
     margin: 20px 0;
     background-color: #13c3c1;
     color: white;
@@ -23,7 +26,7 @@
     font-size: 20px;
 }
 
-.create-account button{
+.create-account{
     background-color: #7099ff;
     width: 150px;
     padding: 5px 0;
