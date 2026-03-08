@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Roboto", sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: top;  
+}
+.user-card{
+    width: 700px;
+    height: 350px;
+    margin-top: 50px;
+    border: 2px solid gray;
+    position: relative;
+}
+.card-header{
+    background-color: rgb(53, 170, 209);
+    height: 35%;
+}
+img{
+    height: 100px;
+    width: 95px;
+    border-radius: 50%;
+    border: 3px solid gray;
+    position: absolute;
+    top: 60px;
+    margin-left: 30px;
+}
+.card-main{
+    margin: 50px 0 0 30px;
+    font-size: 15px;
+    font-weight: 500;
+}
+h2{
+    margin-bottom: 10px;
+}
+.location{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.edit{
+    margin-top: 10px;
+    color: rgb(94, 94, 223);
+}
