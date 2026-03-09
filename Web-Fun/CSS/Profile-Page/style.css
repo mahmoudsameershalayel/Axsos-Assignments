@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Roboto", sans-serif;
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+
+.nav {
+  background-color: #111;
+  padding: 16px 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.nav-title {
+  color: white;
+  font-size: 28px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex: 1;
+  margin-left: 40px;
+}
+
+.nav-links a {
+  color: #ddd;
+}
+
+.nav-links .active {
+  color: white;
+  font-weight: 700;
+}
+
+.btn {
+  background-color: #17a2b8;
+  padding: 10px 18px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+main{
+    padding: 0 200px;
+    display: flex;
+    gap: 30px;
+}
+.left-col{
+    flex: 2;
+}
+.right-col{
+    flex: 1;
+}
+.user-card{
+    height: 350px;
+    margin-top: 30px;
+    border: 3px solid gray;
+    position: relative;
+}
+.card-header{
+    background-color: rgb(53, 170, 209);
+    height: 35%;
+}
+.profile-img{
+    height: 100px;
+    width: 95px;
+    border-radius: 50%;
+    border: 3px solid gray;
+    position: absolute;
+    top: 60px;
+    margin-left: 30px;
+}
+.card-main{
+    margin: 50px 0 0 30px;
+    font-size: 15px;
+    font-weight: 500;
+}
+h2{
+    margin-bottom: 10px;
+}
+.location{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.edit{
+    margin-top: 10px;
+    color: rgb(94, 94, 223);
+
+}
+.edit a{
+    color: rgb(94, 94, 223);
+    text-decoration: underline;
+}
+
+.our-box{
+    height: 200px;
+    margin-top: 30px;
+    border: 3px solid gray;
+}
+.our-box h3{
+    text-align: center;
+    background-color: rgb(63, 61, 61);
+    color: white;
+    padding: 15px 0;
+}
+.our-box span{
+    background-color: gray;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+.our-box img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+.request{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+.profile{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile p{
+    font-size: 20px;
+    font-weight: bold;
+}
+.our-box .connections-count{
+    width: 60px;
+}
+.connection{
+    padding: 10px;
+}
+.last-connections{
+    height: 350px;
+}
+.view-more {
+    border-top:3px solid gray;
+    padding: 10px;
+}
+.view-more a{
+    text-decoration: underline;
+    font-weight: bold;
+    color: rgb(94, 94, 223);
+}
+.education {
+    height: 150px;
+}
+.education h3{
+    text-align: left;
+    padding: 10px 20px;
+}
+.duration{
+    color: gray;
+}
+.education p,h4{
+    margin:10px 20px;
+}
