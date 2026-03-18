@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 0 100px;
+}
+nav{
+    padding: 20px;
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav form {
+    flex: 1;
+    max-width: 400px;
+}
+.search {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.login-btn{
+    padding: 5px 20px;
+    color: white;
+    background-color: rgb(76, 76, 199);
+    box-shadow: 3px 3px black;
+}
+main{
+    display: flex;
+    gap: 20px;
+}
+.right-section{
+    flex: 2;
+}
+.left-section{
+    flex: 1;
+}
+.ninja-card{
+    min-height: 150px;
+    display: flex;
+    text-align: center;
+    font-size: 25px;
+    border: 2px solid black;
+    margin-top: 20px;
+}
+.italic{
+    font-style: italic;
+}
+.ninja-data {
+    margin: 5px 10px;
+
+}
+.ninja-data button{
+    margin-top: 10px;
+    padding: 5px 20px;
+    background-color: sandybrown;
+    box-shadow: 3px 3px black;
+}
+.ninja-description{
+    flex: 2;
+    display: flex;
+    align-items: center;      
+    justify-content: center; 
+}
+.dojonary-card{
+    min-height: 150px;
+    border: 2px solid black;
+    margin-top: 20px;
+    font-size: 30px;
+    padding: 10px;
+}
+.dojonary-card p{
+    margin-bottom: 15px;
+}
+.dojonary-card span{
+    font-weight: bold;
+}
+.dojonary-card button{
+    background-color: rgb(153, 177, 111);
+    box-shadow: 3px 3px black;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid black;
+    font-weight: bold;
+}

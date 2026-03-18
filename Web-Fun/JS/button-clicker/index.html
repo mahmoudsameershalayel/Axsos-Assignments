@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Button Clicker Assignment</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <nav>
+      <h1>Dojonary</h1>
+      <form>
+        <input type="text" class="search" placeholder="Search" />
+      </form>
+      <button onclick="loggedIn(this)" class="login-btn">Login</button>
+    </nav>
+    <main>
+      <div class="right-section">
+        <div class="ninja-card">
+          <div class="ninja-data">
+            <h3>ninja</h3>
+            <p class="italic">noun</p>
+            <p>Plural :<span class="italic">ninjas</span></p>
+            <button onclick="ninjaLiked(this)">13 likes</button>
+          </div>
+          <div class="ninja-description">
+            <p>
+              A practitioner skilled in the<br />
+              <a href="">Japanese</a> art of <a href="#">ninjutsu</a>
+            </p>
+          </div>
+        </div>
+        <div class="ninja-card">
+          <div class="ninja-data">
+            <h3>ninja</h3>
+            <p class="italic">noun</p>
+            <p>Plural :<span class="italic">ninjas</span></p>
+            <button onclick="ninjaLiked(this)">13 likes</button>
+          </div>
+          <div class="ninja-description">
+            <p>
+              A practitioner skilled in the<br />
+              <a href="#">Japanese</a> art of <a href="#">ninjutsu</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="left-section">
+        <div class="dojonary-card">
+          <p>Dojonary is <br> defined by <span>YOU</span></p>
+          <button onclick="removeElem(this)">Add Definition</button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
