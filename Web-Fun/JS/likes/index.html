@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Likes</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <nav>
+      <h1>Netword</h1>
+    </nav>
+    <h3 class="page-header">Your Feed</h3>
+    <main>
+      <div class="profile">
+        <img src="imgs/user-circle.png" alt="avatar" />
+        <br />
+        <a href="#">Add an avatar</a>
+        <h4>James Doe</h4>
+      </div>
+      <div class="posts">
+        <div class="post">
+          <div class="post-header">
+            <h4>Neil M</h4>
+            <div class="likes">
+              <p id="likes-0">0 Like(s)</p>
+              <button  onclick="like(0)">Like</button>
+            </div>
+          </div>
+          <p>
+            I just set up this new discord bot, let me know what you all think.<a href="#">link</a>
+          </p>
+        </div>
+        <div class="post">
+          <div class="post-header">
+            <h4>Neil M</h4>
+            <div class="likes">
+              <p id="likes-1">0 Like(s)</p>
+              <button onclick="like(1)">Like</button>
+            </div>
+          </div>
+          <p>Just finished my <a href="#">next comic</a> , check it out.</p>
+        </div>
+        <div class="post">
+          <div class="post-header">
+            <h4>Neil M</h4>
+            <div class="likes">
+              <p id="likes-2">0 Like(s)</p>
+              <button  onclick="like(2)">Like</button>
+            </div>
+          </div>
+          <p>I can't stop listening to the <a href="#">new album</a> . Who else is liking it?</p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
