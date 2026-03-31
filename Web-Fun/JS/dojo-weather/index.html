@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Dojo Weather Assignment</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <nav>
+      <h1>Dojo Weather</h1>
+      <ul class="cities">
+        <li onclick="loadReport()">Burbank</li>
+        <li onclick="loadReport()">Chicago</li>
+        <li onclick="loadReport()">Dallas</li>
+      </ul>
+    </nav>
+    <main>
+      <div class="info">
+        <h3>San Jose</h3>
+        <div class="temp-info">
+          <p>show temperature in</p>
+          <select name="unit" id="unit" onchange="convertTemp()"> 
+            <option value="F">°F</option>
+            <option value="C" selected>°C</option>
+          </select>
+        </div>
+      </div>
+      <div class="weather-report">
+        <div class="card">
+          <h4>Today</h4>
+          <img src="imgs/some_rain.png" alt="some rain" />
+          <p>some rain</p>
+          <div class="max-min">
+            <p class="max">75°</p>
+            <p class="min">65°</p>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Tomorrow</h4>
+          <img src="imgs/some_sun.png" alt="some sun" />
+          <p>some sun</p>
+          <div class="max-min">
+            <p class="max">80°</p>
+            <p class="min">66°</p>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Friday</h4>
+          <img src="imgs/some_clouds.png" alt="some clouds" />
+          <p>some clouds</p>
+          <div class="max-min">
+            <p class="max">69°</p>
+            <p class="min">61°</p>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Saturday</h4>
+          <img src="imgs/some_sun.png" alt="some sun" />
+          <p>some sun</p>
+          <div class="max-min">
+            <p class="max">78°</p>
+            <p class="min">70°</p>
+          </div>
+        </div>
+      </div>
+      
+    </main>
+    <div class="cookie">
+          <img src="imgs/cookie.png" alt="cookie" />
+        <div class="cookie-info">
+          <h3>Stop! Cookie time</h3>
+          <p>
+            We use cookies (sadly not the edible ones) to personalize<br />
+            content and ads, to provide social media features and to<br />
+            analyse our traffic.
+            <a href="#">Read more...</a>
+          </p>
+        </div>
+
+        <button onclick="removeCookieMessage()">I Accept</button>
+      </div>
+  </body>
+</html>
