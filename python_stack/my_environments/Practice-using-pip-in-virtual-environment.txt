@@ -1,0 +1,102 @@
+1. pip list:
+	Shows all installed Python packages in the current environment.
+	Example output:
+		(py3Env) F:\Axsos Academy\Axsos Assignments\python_stack\my_environments>pip list
+		Package    Version
+		---------- -------
+		pip        24.0
+		setuptools 65.5.0
+
+		[notice] A new release of pip is available: 24.0 -> 26.0.1
+		[notice] To update, run: python.exe -m pip install --upgrade pip
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>	
+2. deactivate:
+	is a command used to exit the currently active virtual environment and return to the system default Python environment.
+	Example output:
+		(py3Env) F:\Axsos Academy\Axsos Assignments\python_stack\my_environments>deactivate
+		F:\Axsos Academy\Axsos Assignments\python_stack\my_environments>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+3. pip list (after deactivation):
+	Again shows installed packages, but now from the global environment.
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+4. Activate environment:
+	Activates a virtual environment.
+	Examples:
+		Windows (PowerShell):
+			F:\Axsos Academy\Axsos Assignments\python_stack\my_environments>call py3Env\Scripts\activate
+			(py3Env) F:\Axsos Academy\Axsos Assignments\python_stack\my_environments>
+		Mac/Linux:
+			source py3Env/bin/activate
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+5. pip install Django:
+	Installs the Django web framework into the current environment.
+	Example output:
+		(py3Env) F:\Axsos Academy\Axsos Assignments\python_stack\my_environments>pip install Django
+		Collecting Django
+		  Using cached django-5.2.13-py3-none-any.whl.metadata (4.1 kB)
+		Collecting asgiref>=3.8.1 (from Django)
+		  Using cached asgiref-3.11.1-py3-none-any.whl.metadata (9.3 kB)
+		Collecting sqlparse>=0.3.1 (from Django)
+		  Using cached sqlparse-0.5.5-py3-none-any.whl.metadata (4.7 kB)
+		Collecting tzdata (from Django)
+		  Using cached tzdata-2026.1-py2.py3-none-any.whl.metadata (1.4 kB)
+		Using cached django-5.2.13-py3-none-any.whl (8.3 MB)
+		Using cached asgiref-3.11.1-py3-none-any.whl (24 kB)
+		Using cached sqlparse-0.5.5-py3-none-any.whl (46 kB)
+		Using cached tzdata-2026.1-py2.py3-none-any.whl (348 kB)
+		Installing collected packages: tzdata, sqlparse, asgiref, Django
+		Successfully installed Django-5.2.13 asgiref-3.11.1 sqlparse-0.5.5 tzdata-2026.1
+
+		[notice] A new release of pip is available: 24.0 -> 26.0.1
+		[notice] To update, run: python.exe -m pip install --upgrade pip
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+6. pip freeze:
+	Lists installed packages in a format used for dependency files.
+	My understanding:
+		Unlike pip list, this shows packages in name==version format, which is useful for recreating environments.
+	Example output:
+		(py3Env) F:\Axsos Academy\Axsos Assignments\python_stack\my_environments>pip freeze
+		asgiref==3.11.1
+		Django==5.2.13
+		sqlparse==0.5.5
+		tzdata==2026.1
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+7. pip freeze > requirements.txt
+	Saves the output of pip freeze into a file.
+	Example output:
+		F:\Axsos Academy\Axsos Assignments\python_stack>pip freeze > requirements.txt
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+8. pip uninstall Django:
+	Removes the Django package.
+	Example output:
+		(py3Env) F:\Axsos Academy\Axsos Assignments\python_stack\my_environments>pip uninstall Django
+		Found existing installation: Django 5.2.13
+		Uninstalling Django-5.2.13:
+		  Would remove:
+			f:\axsos academy\axsos assignments\python_stack\my_environments\py3env\lib\site-packages\django-5.2.13.dist-info\*
+			f:\axsos academy\axsos assignments\python_stack\my_environments\py3env\lib\site-packages\django\*
+			f:\axsos academy\axsos assignments\python_stack\my_environments\py3env\scripts\django-admin.exe
+		Proceed (Y/n)? y
+		  Successfully uninstalled Django-5.2.13
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>		  
+9. pip show Django:
+	Displays detailed information about the Django package.
+	After uninstalling, it showed:
+		(py3Env) F:\Axsos Academy\Axsos Assignments\python_stack\my_environments>pip show Django
+		WARNING: Package(s) not found: Django
+	But when install it and run command again:
+		(py3Env) F:\Axsos Academy\Axsos Assignments\python_stack\my_environments>pip show Django
+		Name: Django
+		Version: 5.2.13
+		Summary: A high-level Python web framework that encourages rapid development and clean, pragmatic design.
+		Home-page:
+		Author:
+		Author-email: Django Software Foundation <foundation@djangoproject.com>
+		License:
+		Location: F:\Axsos Academy\Axsos Assignments\python_stack\my_environments\py3Env\Lib\site-packages
+		Requires: asgiref, sqlparse, tzdata
+		Required-by:
+
+
+
+	
