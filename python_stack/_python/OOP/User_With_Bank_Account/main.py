@@ -33,30 +33,45 @@ class User:
     def __init__(self, name, email):
         self.name = name
         self.email = email
-        self.account = BankAccount(int_rate=0.02, balance=0)
-        
-    def make_deposit(self, amount):
-        self.account.deposit(amount)
+        self.accounts = {}
+
+    def add_account(self, account_name, int_rate=0.02, balance=0):
+        self.accounts[account_name] = BankAccount(int_rate, balance)
+        return self
+            
+    def make_deposit(self,account_name, amount):
+        self.accounts[account_name].deposit(amount)
         return self
         
-    def make_withdrawal(self, amount):
-        self.account.withdraw(amount)
+    def make_withdrawal(self,account_name, amount):
+        self.accounts[account_name].withdraw(amount)
         return self
         
-    def transfer_money(self, other_user, amount):
-        if(amount > self.account.balance):
+    def transfer_money(self, from_account, other_user, to_account, amount):
+        if(amount > self.accounts[from_account].balance):
             print('No enough balance for this transfer!!')
         else:
-            self.account.balance -= amount
-            other_user.account.balance += amount
+            self.accounts[from_account].balance -= amount
+            other_user.accounts[to_account].balance += amount
         return self
         
-    def display_user_balance(self):
-        print(f'User: {self.name}, Balance: ${self.account.balance}')
+    def display_user_balance(self, account_name):
+        print(f'User: {self.name}, Balance: ${self.accounts[account_name].balance}')
         return self
        
 
 
-user_1 = User("mahmoud" , "Mahmoud.Shalayel@axsos.academy")
-user_1.make_deposit(100).make_withdrawal(20)
-user_1.display_user_balance()
+user1 = User("Mahmoud", "mahmoud@mail.com")
+user2 = User("Ali", "ali@mail.com")
+
+user1.add_account("checking", 0.02, 100)
+user1.add_account("savings", 0.05, 500)
+
+user2.add_account("checking", 0.02, 50)
+
+user1.make_deposit("checking", 50).make_withdrawal("savings", 100)
+
+user1.transfer_money("checking", user2, "checking", 30)
+
+user1.display_user_balance("checking")
+user1.display_user_balance("savings")
