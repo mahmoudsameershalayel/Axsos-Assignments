@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+
+python_stack/flask/flask_fundamentals/flask_env/
+python_stack/my_environments/flask_setup/
