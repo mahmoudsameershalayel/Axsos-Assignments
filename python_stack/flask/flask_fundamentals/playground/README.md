@@ -1,37 +1,37 @@
-# Card Game Playground
+# Playground Flask App
 
-A simple Flask web application to display customizable playing cards.
+A simple Flask app that displays boxes/cards using dynamic routes.
 
-## Features
+## Setup
 
-- Display playing cards with configurable count and color
-- Dynamic URL routing for easy customization
-- Built with Flask and Jinja2 templating
+Install Flask:
 
-## Routes
-
-- `/play` - Display 3 cards in aqua color
-- `/play/<nums>` - Display a specified number of cards in aqua color
-- `/play/<nums>/<color>` - Display a specified number of cards in a custom color
-
-## Installation
-
-1. Install Flask:
-   ```
-   pip install flask
-   ```
-
-## Running the App
-
-Start the development server:
+```bash
+pip install flask
 ```
+
+## Run
+
+Start the app:
+
+```bash
 python main.py
 ```
 
-The app will run on `http://localhost:5000` by default.
+Open the app in your browser:
 
-## Usage Examples
+```text
+http://localhost:5000/play
+```
 
-- `http://localhost:5000/play` - View 3 aqua cards
-- `http://localhost:5000/play/5` - View 5 aqua cards
-- `http://localhost:5000/play/7/red` - View 7 red cards
+## Routes
+
+- `/play` shows 3 aqua cards.
+- `/play/<nums>` shows the number of aqua cards you choose.
+- `/play/<nums>/<color>` shows the number and color of cards you choose.
+
+## Examples
+
+- `http://localhost:5000/play`
+- `http://localhost:5000/play/5`
+- `http://localhost:5000/play/5/red`
