@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <title>Counter</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Counter</h2>
+        <p>Visits: {{ visits }}</p>
+        <p>Counter: {{ counter }}</p>
+        <form action="/increment_by_two" method="post">
+            <button type="submit">+2</button>
+        </form>
+        <form action="/destroy_session" method="post">
+            <button type="submit">Reset</button>
+        </form>
+        <form action="/increment" method="post">
+            <input type="number" name="increment_amount" min="0" required>
+            <button type="submit">Increment</button>
+        </form>
+        <a class="button-link" href="/decode_cookie">Decode Cookie</a>
+    </div>
+</body>
+</html>
