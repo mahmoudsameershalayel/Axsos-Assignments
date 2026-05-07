@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  padding-top: 40px;
+}
+.collection {
+  display: flex;
+  align-items: center;   
+  gap: 10px;           
+  margin-bottom: 10px;
+}
+.collection label {
+  width: 150px;         
+}
+
+.btn{
+    padding: 5px 10px;
+    border: 2px solid black;
+    box-shadow: 5px 3px black;
+    background-color: lightseagreen;
+    color: #fff;
+    margin-top: 10px;
+}
+.actions {
+  display: flex;
+  justify-content: flex-end; 
+}
+
+h3{
+    text-decoration: underline;
+}
