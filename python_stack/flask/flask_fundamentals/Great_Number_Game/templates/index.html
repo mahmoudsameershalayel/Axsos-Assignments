@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Great Number Game</title>
+</head>
+<body>
+    <main>
+        <h3>Welcome to the Great Number Game!</h3>
+        <a href="/leaderboard" class="leaderboard-link">Leaderboard</a>
+        <p>I am thinking of a number between 1 and 100</p>
+        <p>Take a guess!</p>
+        <p class="attempts">{{ attempts }}</p>
+        {% if result == 'high' %}
+        <div class="box red">
+            Too High!
+        </div>
+
+        {% elif result == 'low' %}
+            <div class="box red">
+                Too Low!
+            </div>
+
+        {% elif result == 'correct' %}
+            <div class="box green">
+                {{ session['random_number'] }} was the number!
+            </div>
+            <form action="/winner" method="POST" class="winner-form">
+                <input type="text" name="name" placeholder="Your name" required>
+                <input type="submit" value="Save Score" class="btn">
+            </form>
+            <a href="/reset">
+                <button class="btn">Play Again</button>
+            </a>
+        {% elif result == 'lose' %}
+            <div class="box red">
+                You Lose
+                <a href="/reset">
+                    <button class="btn">Play Again</button>
+                </a>
+            </div>
+        {% endif %}
+
+        {% if result != 'correct' and result != 'lose' %}
+        <form action="/guess" method="POST">
+            <input type="number" name="guessed_number" min="1" max="100" required><br>
+            <input type="submit" value="Submit" class="btn">
+        </form>
+        {% endif %}
+    </main>
+</body>
+</html>

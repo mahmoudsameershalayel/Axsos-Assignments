@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Leaderboard</title>
+</head>
+<body>
+    <main>
+        <h3>Leaderboard</h3>
+        <a href="/" class="leaderboard-link">Back to Game</a>
+
+        {% if winners %}
+            <table class="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Attempts</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for winner in winners %}
+                        <tr>
+                            <td>{{ winner.name }}</td>
+                            <td>{{ winner.attempts }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p class="empty-board">No winners yet.</p>
+        {% endif %}
+    </main>
+</body>
+</html>
