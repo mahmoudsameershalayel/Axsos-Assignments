@@ -1,0 +1,14 @@
+class Solution(object):
+    def isValid(self, s):
+        stack = []
+        for char in s:
+            if char == '(' or char == '{' or char == '[':
+                stack.append(char)
+            else:
+                last_one = stack[-1] if stack else None
+                if (char == ')' and last_one == '(') or (char == '}' and last_one == '{') or (char == ']' and last_one == '['):
+                    stack.pop()
+                else:
+                    return False
+
+        return False if stack else True   
