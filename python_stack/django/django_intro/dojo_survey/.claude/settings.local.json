@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(echo.)",
+      "PowerShell(New-Item -Path \"f:\\\\Axsos Academy\\\\Axsos Assignments\\\\python_stack\\\\django\\\\django_intro\\\\dojo_survey\\\\collect_data\\\\templates\\\\result.html\" -ItemType File -Force)"
+    ]
+  }
+}
