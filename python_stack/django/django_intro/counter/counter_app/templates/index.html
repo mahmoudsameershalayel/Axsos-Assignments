@@ -1,0 +1,23 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Counter</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Counter</h2>
+        <p>Page visits: {{ request.session.visits }}</p>
+        <p>Counter value: {{ request.session.count }}</p>
+        <a href="/increment_by_two" class="btn">+2</a>
+        <a href="/destroy_session" class="btn">Reset</a>
+        <form action="/increment_by_amount" method="POST">
+            {% csrf_token %}
+            <input type="number" name="amount" placeholder="Enter amount">
+            <button type="submit">Increment</button>
+        </form>
+    </div>
+</body>
+</html>
