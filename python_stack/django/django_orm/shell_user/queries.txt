@@ -1,0 +1,58 @@
+>>> from shell_app.models import  *
+>>> user.objects.create(first_name="first", last_name="user", email="firstuser@test.com", age= 21)
+<user: user object (4)>
+>>> user.objects.create(first_name="second", last_name="user", email="seconduser@test.com", age= 22)
+<user: user object (5)>
+>>> user.objects.create(first_name="third", last_name="user", email="thirduser@test.com", age= 23)
+<user: user object (6)>
+
+
+>>> users = user.objects.all()
+>>> for user in users:
+...     print(user.email)
+...
+mahmoud@gmail.com
+mahmoud@gmail.com
+mahmoud@gmail.com
+firstuser@test.com
+seconduser@test.com
+thirduser@test.com
+
+
+
+>>> for user in users:
+...     print(user.id)
+...
+1
+2
+3
+4
+5
+6
+
+
+>>> last_user = user.objects.get(id=6)
+>>> print(last_user.email)
+thirduser@test.com
+>>> first_user = user.objects.get(id=1)
+>>> print(first_user.email)
+mahmoud@gmail.com
+>>> user_to_update = user.objects.get(id=3)
+>>> user_to_update.last_name = "Pancakes"
+>>> user_to_update.save()
+>>> print(user_to_update.last_name)
+Pancakes
+
+
+>>> user_to_remove = user.objects.get(id=2)
+>>> user_to_remove.delete()
+(1, {'shell_app.user': 1})
+>>> user.objects.all()
+<QuerySet [<user: user object (1)>, <user: user object (3)>, <user: user object (4)>, <user: user object (5)>, <user: user object (6)>]>
+
+
+
+>>> orderd_users = user.objects.all().order_by("first_name")
+
+
+>>> orderd_users = user.objects.all().order_by("-first_name")

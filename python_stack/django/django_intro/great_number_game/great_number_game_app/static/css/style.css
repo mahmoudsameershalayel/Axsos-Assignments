@@ -1,0 +1,86 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: sans-serif;
+    text-align: center;
+    padding: 40px 20px;
+    background: #f5f5f5;
+}
+h1 { font-size: 1.8rem; margin-bottom: 8px; }
+.subtitle { color: #555; margin-bottom: 30px; line-height: 1.6; }
+.result-box {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.3;
+}
+.red  { background-color: #c0392b; }
+.green { background-color: #27ae60; }
+.result-box .sub { font-size: 0.8rem; font-weight: normal; margin-top: 8px; }
+.play-again {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 6px 16px;
+    background: white;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.85rem;
+    border: 1px solid #ccc;
+}
+.guess-form input[type="number"] {
+    padding: 6px 10px;
+    font-size: 1rem;
+    width: 130px;
+    border: 1px solid #bbb;
+}
+.guess-form button {
+    padding: 7px 16px;
+    font-size: 1rem;
+    border: 1px solid #bbb;
+    background: white;
+    cursor: pointer;
+}
+.name-form { margin-top: 12px; }
+.name-form input[type="text"] {
+    padding: 5px 8px;
+    font-size: 0.85rem;
+    width: 140px;
+    border: 1px solid #bbb;
+}
+.name-form button {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    border: 1px solid #bbb;
+    background: white;
+    cursor: pointer;
+}
+.leaderboard-link { display: block; margin-top: 10px; color: #ddd; font-size: 0.8rem; text-decoration: underline; }
+
+/* Leaderboard page */
+h1 { margin-bottom: 30px; }
+table {
+    margin: 0 auto 30px;
+    border-collapse: collapse;
+    min-width: 320px;
+}
+th, td {
+    padding: 10px 24px;
+    border: 1px solid #ccc;
+}
+th { background: #333; color: white; }
+tr:nth-child(even) { background: #eee; }
+.btn-green {
+    display: inline-block;
+    padding: 9px 20px;
+    background: #27ae60;
+    color: white;
+    text-decoration: none;
+}
+
