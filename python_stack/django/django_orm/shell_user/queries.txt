@@ -31,10 +31,10 @@ thirduser@test.com
 6
 
 
->>> last_user = user.objects.get(id=6)
+>>> last_user = user.objects.last()
 >>> print(last_user.email)
 thirduser@test.com
->>> first_user = user.objects.get(id=1)
+>>> first_user = user.objects.first()
 >>> print(first_user.email)
 mahmoud@gmail.com
 >>> user_to_update = user.objects.get(id=3)

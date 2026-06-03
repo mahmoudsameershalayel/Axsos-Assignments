@@ -1,53 +1,60 @@
 # First Django Project
 
-This is a simple Django intro project with one app named `first_app`.
-
-The app currently contains placeholder blog routes for practicing Django URL routing,
-views, redirects, and JSON responses.
+A multi-app Django project practicing URL routing, views, and redirects across three independent apps.
 
 ## Project Structure
 
-```text
+```
 first_project/
-|-- manage.py
-|-- db.sqlite3
-|-- first_project/
-|   |-- settings.py
-|   `-- urls.py
-`-- first_app/
-    |-- urls.py
-    |-- views.py
-    |-- models.py
-    `-- tests.py
+├── manage.py
+├── first_project/       # project config
+│   ├── settings.py
+│   └── urls.py
+├── first_app/           # blogs app
+│   ├── urls.py
+│   └── views.py
+├── surveys_app/         # surveys app
+│   ├── urls.py
+│   └── views.py
+└── users_app/           # users app
+    ├── urls.py
+    └── views.py
 ```
 
-## How to Run
+## Setup
 
-From the project folder, run:
+Activate the virtual environment, then run:
 
 ```bash
-python manage.py runserver
+py manage.py runserver
 ```
 
-Then open:
+## Routes
 
-```text
-http://127.0.0.1:8000/
-```
+### Blogs (`first_app`)
 
-## App Routes
+| URL | Method | Description |
+|-----|--------|-------------|
+| `/` | `index` | Same as `/blogs` (ninja bonus) |
+| `/blogs/` | `index` | List all blogs |
+| `/blogs/new` | `new` | New blog form |
+| `/blogs/create` | `create` | Redirects to `/blogs` |
+| `/blogs/<number>` | `show` | Show one blog |
+| `/blogs/<number>/edit` | `edit` | Edit one blog |
+| `/blogs/<number>/delete` | `destroy` | Redirects to `/blogs` |
 
-| URL | Description |
-| --- | --- |
-| `/` | Redirects to `/blogs` |
-| `/blogs` | Placeholder for all blogs |
-| `/blogs/new` | Placeholder for a new blog form |
-| `/blogs/create` | Redirects back to `/` |
-| `/blogs/<number>` | Placeholder for showing one blog |
-| `/blogs/<number>/edit` | Placeholder for editing one blog |
-| `/blog/json` | Intended route for returning blog data as JSON |
+### Surveys (`surveys_app`)
 
-## Notes
+| URL | Method | Description |
+|-----|--------|-------------|
+| `/surveys/` | `index` | List all surveys |
+| `/surveys/new` | `new` | New survey form |
 
-This project is for learning Django basics. The views currently return simple
-placeholder responses and can be expanded later with templates, models, and forms.
+### Users (`users_app`)
+
+| URL | Method | Description |
+|-----|--------|-------------|
+| `/register` | `register` | Register a new user |
+| `/users/new` | `register` | Same as `/register` |
+| `/login` | `user_login` | Log in |
+| `/users` | `index` | List all users |
