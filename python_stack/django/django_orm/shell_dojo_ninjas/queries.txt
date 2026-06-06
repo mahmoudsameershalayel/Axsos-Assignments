@@ -1,0 +1,85 @@
+>>> from shell_dojo_ninjas_app import *
+>>> Dojo.objects.create(name='first', city='Gaza', state='A1')
+<Dojo: Dojo object (1)>
+>>> Dojo.objects.create(name='second', city='Rafah', state='A2')
+<Dojo: Dojo object (2)>
+>>> Dojo.objects.create(name='third', city='Ramallah', state='A3')
+<Dojo: Dojo object (3)>
+
+>>> Dojo.objects.first().delete()
+(1, {'shell_dojo_ninjas_app.Dojo': 1})
+>>> Dojo.objects.first().delete()
+(1, {'shell_dojo_ninjas_app.Dojo': 1})
+>>> Dojo.objects.first().delete()
+(1, {'shell_dojo_ninjas_app.Dojo': 1})
+>>> Dojo.objects.all()
+<QuerySet []>
+
+
+>>> Dojo.objects.create(name='first', city='Gaza', state='A1')
+<Dojo: Dojo object (4)>
+>>> Dojo.objects.create(name='second', city='Rafah', state='A2')
+<Dojo: Dojo object (5)>
+>>> Dojo.objects.create(name='third', city='Ramallah', state='A3')
+<Dojo: Dojo object (6)>
+
+
+>>> first_dojo = Dojo.objects.first()
+>>> Ninja.objects.create(dojo= first_dojo, first_name='first', last_name= 'ninja')
+<Ninja: Ninja object (1)>
+>>> Ninja.objects.create(dojo= first_dojo, first_name='second', last_name= 'ninja')
+<Ninja: Ninja object (2)>
+>>> Ninja.objects.create(dojo= first_dojo, first_name='third', last_name= 'ninja')
+<Ninja: Ninja object (3)>
+
+
+
+>>> Dojo.objects.all().values()
+<QuerySet [{'id': 4, 'name': 'first', 'city': 'Gaza', 'state': 'A1'}, {'id': 5, 'name': 'second', 'city': 'Rafah', 'state': 'A2'}, {'id': 6, 'name': 'third', 'city': 'Ramallah', 'state': 'A3'}]>
+>>> second_dojo = Dojo.objects.get(id=5)
+>>> Ninja.objects.create(dojo= second_dojo, first_name='fourth', last_name= 'ninja')
+<Ninja: Ninja object (4)>
+>>> Ninja.objects.create(dojo= second_dojo, first_name='fifth', last_name= 'ninja')
+<Ninja: Ninja object (5)>
+>>> Ninja.objects.create(dojo= second_dojo, first_name='sixth', last_name= 'ninja')
+<Ninja: Ninja object (6)>
+
+
+>>> third_dojo = Dojo.objects.last()
+>>> Ninja.objects.create(dojo= third_dojo, first_name='seventh', last_name= 'ninja')
+<Ninja: Ninja object (7)>
+>>> Ninja.objects.create(dojo= third_dojo, first_name='eighth', last_name= 'ninja')
+<Ninja: Ninja object (8)>
+>>> Ninja.objects.create(dojo= third_dojo, first_name='ninth', last_name= 'ninja')
+<Ninja: Ninja object (9)>
+
+
+>>> first_dojo = Dojo.objects.first()
+>>> first_dojo.ninjas.all().values()
+<QuerySet [{'id': 1, 'dojo_id': 4, 'first_name': 'first', 'last_name': 'ninja'}, {'id': 2, 'dojo_id': 4, 'first_name': 'second', 'last_name': 'ninja'}, {'id': 3, 'dojo_id': 4, 'first_name': 'third', 'last_name': 'ninja'}]>
+
+
+>>> last_dojo = Dojo.objects.last()
+>>> last_dojo.ninjas.all().values()
+<QuerySet [{'id': 7, 'dojo_id': 6, 'first_name': 'seventh', 'last_name': 'ninja'}, {'id': 8, 'dojo_id': 6, 'first_name': 'eighth', 'last_name': 'ninja'}, {'id': 9, 'dojo_id': 6, 'first_name': 'ninth', 'last_name': 'ninja'}]>
+
+
+>>> Ninja.objects.last()
+<Ninja: Ninja object (9)>
+
+
+(django_env) D:\Axsos Academy\Axsos Assignments\python_stack\django\django_orm\shell_dojo_ninjas>py manage.py makemigrations
+Migrations for 'shell_dojo_ninjas_app':
+  shell_dojo_ninjas_app\migrations\0002_dojo_desc.py
+    + Add field desc to dojo
+
+(django_env) D:\Axsos Academy\Axsos Assignments\python_stack\django\django_orm\shell_dojo_ninjas>py manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions, shell_dojo_ninjas_app
+Running migrations:
+  Applying shell_dojo_ninjas_app.0002_dojo_desc... OK
+
+
+
+>>> Dojo.objects.create(name='test', city='test', desc='test', state='test')
+<Dojo: Dojo object (7)>

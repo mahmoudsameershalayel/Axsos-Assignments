@@ -1,5 +1,5 @@
 """
-URL configuration for shell_user project.
+URL configuration for shell_dojo_ninjas project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/6.0/topics/http/urls/
@@ -17,5 +17,5 @@ Including another URLconf
 from django.urls import path, include
 
 urlpatterns = [
-    path('', include('shell_app.urls')),
+    path('', include('shell_dojo_ninjas_app.urls')),
 ]
