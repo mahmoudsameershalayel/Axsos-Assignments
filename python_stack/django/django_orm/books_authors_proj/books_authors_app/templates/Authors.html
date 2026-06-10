@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Authors</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row m-5">
+            <div class="col-md-6">
+                <h1>Add an Author</h1>
+                <form action="/create_author/" method="POST" class="p-3 border rounded shadow-sm bg-light">
+                    {% csrf_token %}
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="first_name" class="form-label">First Name</label>
+                            <input type="text" id="first_name" name="first_name" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="last_name" class="form-label">Last Name</label>
+                            <input type="text" id="last_name" name="last_name" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <label for="notes" class="form-label">Notes</label>
+                            <textarea id="notes" name="notes" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Add</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                {% if authors.all %}
+                <table class="table table-striped mb-0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for author in authors.all %}
+                        <tr>
+                            <td>{{ author.id }}</td>
+                            <td>{{ author.first_name }} {{ author.last_name }}</td>
+                            <td><a href="/authors/{{ author.id }}/" class="btn btn-sm btn-outline-primary">View</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <p>No authors available.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

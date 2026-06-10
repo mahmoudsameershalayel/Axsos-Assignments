@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{{ author.first_name }} {{ author.last_name }}</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row m-5">
+            <div class="col-md-6">
+                <a href="/authors/" class="btn btn-outline-secondary mb-3">&larr; Back to Authors</a>
+                <h1>{{ author.first_name }} {{ author.last_name }}</h1>
+                <p class="text-muted">{{ author.notes }}</p>
+
+                <h4 class="mt-4">Books</h4>
+                {% if author.books.all %}
+                <table class="table table-striped mb-0">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for book in author.books.all %}
+                        <tr>
+                            <td>{{ book.title }}</td>
+                            <td>{{ book.desc }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <p class="text-muted">No books associated with this author yet.</p>
+                {% endif %}
+            </div>
+
+            <div class="col-md-6">
+                <h4>Add a Book</h4>
+                <form action="/authors/{{ author.id }}/add_book/" method="POST" class="p-3 border rounded shadow-sm bg-light">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="book_id" class="form-label">Select Book</label>
+                        <select id="book_id" name="book_id" class="form-select" required>
+                            {% for book in books %}
+                            <option value="{{ book.id }}">{{ book.title }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
