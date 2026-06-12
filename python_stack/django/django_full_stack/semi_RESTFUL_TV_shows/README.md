@@ -1,26 +1,40 @@
-semi_RESTFUL_TV_shows_app
+# Semi-RESTful TV Shows
 
-Simple Django app for the "Semi RESTful TV Shows" assignment.
+A Django web app for managing a list of TV shows with full CRUD functionality.
 
-Overview
-- This app manages TV shows with views to list, create, edit, and show details.
-- Templates live in `semi_RESTFUL_TV_shows_app/templates/` and static files in `semi_RESTFUL_TV_shows_app/static/`.
+## Features
 
-Quick start
-1. From the project root, ensure dependencies are installed (Python, Django).
-2. Run the development server:
+- View all TV shows
+- Add a new show
+- Edit an existing show
+- Delete a show
+- Server-side validation (title uniqueness, release date, field lengths)
 
-   python manage.py runserver
+## Setup
 
-3. Open http://127.0.0.1:8000/ and navigate to the app routes (see project URLs).
+```bash
+pip install django
+python manage.py migrate
+python manage.py runserver
+```
 
-Notes
-- Database migrations are stored in `semi_RESTFUL_TV_shows_app/migrations/`.
-- To reset the DB during development, delete `db.sqlite3` and run `python manage.py migrate`.
+Then visit `http://127.0.0.1:8000/`
 
-Files of interest
-- `semi_RESTFUL_TV_shows_app/views.py` — request handlers
-- `semi_RESTFUL_TV_shows_app/urls.py` — app URL patterns
-- `semi_RESTFUL_TV_shows_app/templates/` — HTML templates
+## Routes
 
-If you want, I can add a `requirements.txt`, example data, or expand these instructions.
+| Method | URL | Action |
+|--------|-----|--------|
+| GET | `/shows/` | List all shows |
+| GET | `/shows/new/` | New show form |
+| POST | `/shows/create/` | Create a show |
+| GET | `/shows/<id>/` | Show details |
+| GET | `/shows/<id>/edit/` | Edit show form |
+| POST | `/shows/<id>/update/` | Update a show |
+| POST | `/shows/<id>/destroy/` | Delete a show |
+
+## Validations
+
+- Title: required, min 2 characters, must be unique
+- Network: required, min 3 characters
+- Release date: required, must not be in the future
+- Description: optional, min 10 characters if provided
